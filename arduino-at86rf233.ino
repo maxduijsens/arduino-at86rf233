@@ -50,16 +50,6 @@ unsigned long RESET = 8;
 unsigned long SLP_TR = 7;
 unsigned long SEL = 6;
 
-// unused shit:
-//byte sPHR = 0B00000101; //Length of the frame to be sent (n + 2; n - Number of PSDU bytes)
-//byte sFCF1 = 0B01000000;
-//byte sFCF2 = 0B00000100;
-
-
-//int ctrlZustand = LOW;
-//long zuletzt = 0;
-//long Intervall = 1000;
-
 int received = 0;
 
 void setup() {
@@ -192,7 +182,7 @@ void writeRegister(byte thisRegister, byte thisValue) {
   digitalWrite(SEL, HIGH);
 }
 
-// Write to frame
+// Write to frame aka Send a packet
 void writeFrame(byte seqnr) {
 //  digitalWrite(SEL, LOW);
 //  SPI.transfer(FRAME_WRITE);
